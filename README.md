@@ -37,7 +37,7 @@ Clone into your ComfyUI `custom_nodes` folder and restart ComfyUI:
 
 ```bash
 cd ComfyUI/custom_nodes
-git clone https://github.com/<your-username>/comfyui-production-nodes.git
+git clone https://github.com/ivmaaz/comfyui-production-nodes.git
 ```
 
 No extra dependencies are needed; the nodes only use PyTorch, which ComfyUI already includes.
@@ -60,6 +60,16 @@ Load Image ──> (any segmentation / background removal node) ──MASK──
 ```
 
 Feed Mask Feather's `mask` output into a compositing node (for example the core **ImageCompositeMasked**) to place the subject on a new background.
+
+## Examples
+
+**Aspect Ratio Converter**: one 3:2 image turned into a 9:16 story format, once cropped and once padded.
+
+![Aspect Ratio Converter: original, 9:16 crop and 9:16 pad](docs/aspect_ratio_example.png)
+
+**Mask Feather**: a hard mask shrunk by 6 px and feathered with radius 16; the soft edge removes the cut-out look when compositing.
+
+![Mask Feather: hard mask, feathered mask and both cut-outs](docs/mask_feather_example.png)
 
 ## Tests
 
